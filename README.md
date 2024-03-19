@@ -1,6 +1,6 @@
 2024/03/18~19 TIL
 
-###고민한점 & 배운점:
+### 고민한점 & 배운점:
 
 1. 컴포넌트는 여러번 리랜더링 되므로 불필요한 함수 호출 발생에 유의
    e.g. 클릭이벤트 등에 연결하는 함수들, useState의 초기값으로 함수의 return값을 넣을 때 등 callback함수 활용.
@@ -15,7 +15,7 @@
    useState를 써서 상태를 변화시킬때 setState함수의 clousure로 state에 접근한다, prev 매개변수는 필요한 경우에만 사용
    useState로 상태 변경시 "다음 렌더때" 반영 된다는 것을 주의해야 한다.->setState함수 호출시 setState함수 내부에서 state의 값이 변하지만, 컴포넌트의 rerender된 후에 다시 useState에서 state와 setState를 불러오기 때문에 변경사항이 반영되는 것은 다음 렌더때이다.
 
-###소감
+### 소감
 
 1. useStateHook 사용시 주의사항으로 비동기 요청시 abort?controller? 라는 것을 봤는데 투두리스트는 정적인 데이터만 다루고 있어서 사용 안했다. 나중에 적용해보고 싶다.
 
