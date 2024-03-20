@@ -14,6 +14,7 @@
 4. useState사용시 주의사항들 배움.  
    useState를 써서 상태를 변화시킬때 setState함수의 clousure로 state에 접근한다, prev 매개변수는 필요한 경우에만 사용  
    useState로 상태 변경시 "다음 렌더때" 반영 된다는 것을 주의해야 한다.->setState함수 호출시 setState함수 내부에서 state의 값이 변하지만, 컴포넌트의 rerender된 후에 다시 useState에서 state와 setState를 불러오기 때문에 변경사항이 반영되는 것은 다음 렌더때이다.
+5. negative비교 사용 지양
 
 ### 소감
 

@@ -10,7 +10,7 @@ export default function TodoNav({ currentMode, handleModeChange, modes }) {
         {modes?.map((mode, idx) => (
           <li
             key={idx}
-            className={`px-2 py-1 text-semibold ${mode === currentMode ? 'text-pink-400' : 'text-neutral-500'}`}
+            className={`text-semibold px-2 py-1 ${mode === currentMode ? 'text-pink-400' : 'text-neutral-500'}`}
             onClick={changeMode(mode)}
           >
             {mode}

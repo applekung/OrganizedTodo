@@ -2,29 +2,24 @@ import { useState } from 'react'
 import { MdOutlineModeEdit, MdDelete } from 'react-icons/md'
 import { FaCheck } from 'react-icons/fa'
 
-export default function SingleTask({
-  task,
-  handleDeleteTask,
-  handleEditTask,
-  handleChangeStatus,
-}) {
+export default function Task({ task, deleteTask, editTask, changeStatus }) {
   const { id, text, status } = task
   const [isEditing, setIsEditing] = useState(false)
   const [editedValue, setEditedValue] = useState(text)
 
   const handleCheck = (e) => {
     const newStatus = e.target.checked ? 'DONE' : 'INPROGRESS'
-    handleChangeStatus(id, newStatus)
+    changeStatus(id, newStatus)
   }
 
   const handleDelete = () => {
-    handleDeleteTask(id)
+    deleteTask(id)
   }
 
   const handleEditChange = (e) => setEditedValue(e.target.value)
 
   const handleEdit = () => {
-    handleEditTask({ ...task, text: editedValue })
+    editTask({ ...task, text: editedValue })
     setIsEditing(false)
   }
 

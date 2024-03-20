@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import TodoList from './component/todos/TodoList'
+import TodoList from './component/main/TodoList'
 import TodoNav from './component/header/TodoNav'
 
 const modes = ['ALL', 'DONE', 'INPROGRESS']
@@ -11,7 +11,7 @@ function App() {
   }
 
   return (
-    <div className="max-w-xl mx-auto mt-20">
+    <div className="mx-auto mt-20 max-w-xl">
       <TodoNav
         currentMode={currentMode}
         handleModeChange={handleModeChange}
