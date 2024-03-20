@@ -46,19 +46,19 @@ export default function TodoList({ currentMode }) {
       <AddTask addTask={handleAddTask} />
       <ul>
         {/* taskToShow에서 map으로 Task 한줄씩 보여줌 */}
-        {taskToShow.length ? (
-          taskToShow.map((task) => (
-            <Task
-              key={task.id}
-              task={task}
-              editTask={editTask}
-              deleteTask={deleteTask}
-              changeStatus={changeStatus}
-            />
-          ))
-        ) : (
-          <p className="text-neutral-500">할일을 추가해주세요 :D</p>
-        )}
+        {taskToShow.length
+          ? taskToShow.map((task) => (
+              <Task
+                key={task.id}
+                task={task}
+                editTask={editTask}
+                deleteTask={deleteTask}
+                changeStatus={changeStatus}
+              />
+            ))
+          : currentMode === 'ALL' && (
+              <p className="text-neutral-500">할일을 추가해주세요 :D</p>
+            )}
       </ul>
     </div>
   )
