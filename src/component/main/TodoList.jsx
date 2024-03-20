@@ -14,7 +14,7 @@ export default function TodoList({ currentMode }) {
     setTasks((prevTasks) => [...prevTasks, newTask])
   }
 
-  const editTast = (editedTask) => {
+  const editTask = (editedTask) => {
     setTasks((prevTasks) =>
       prevTasks.map((task) => (task.id === editedTask.id ? editedTask : task)),
     )
@@ -51,7 +51,7 @@ export default function TodoList({ currentMode }) {
             <Task
               key={task.id}
               task={task}
-              editTast={editTast}
+              editTask={editTask}
               deleteTask={deleteTask}
               changeStatus={changeStatus}
             />
