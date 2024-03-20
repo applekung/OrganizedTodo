@@ -30,13 +30,13 @@ export default function Task({ task, deleteTask, editTask, changeStatus }) {
   }
 
   return (
-    <div className="flex justify-between items-center">
+    <div className="flex items-center justify-between">
       <div>
         <input
           type="checkbox"
           onChange={handleCheck}
           checked={status === 'DONE' ? true : false}
-          className="accent-purple-400"
+          className="checkBox"
         />
         {isEditing ? (
           <input
@@ -44,11 +44,11 @@ export default function Task({ task, deleteTask, editTask, changeStatus }) {
             value={editedValue}
             onChange={handleEditChange}
             onKeyDown={handleEditEnter}
-            className={`w-96 text-lg text-neutral-700 px-2 py-1 ${status === 'DONE' ? 'line-through' : ''}`}
+            className={`input ${status === 'DONE' ? 'line-through' : ''}`}
           />
         ) : (
           <input
-            className={`w-96 px-2 py-1 text-lg text-neutral-700 pointer-events-none ${status === 'DONE' ? 'line-through text-neutral-400' : ''}`}
+            className={`input pointer-events-none ${status === 'DONE' ? 'text-neutral-400 line-through' : ''}`}
             type="text"
             value={text}
             readOnly
@@ -58,15 +58,15 @@ export default function Task({ task, deleteTask, editTask, changeStatus }) {
       <div>
         {isEditing ? (
           <button onClick={handleEdit}>
-            <FaCheck className="w-5 h-5 text-neutral-400" />
+            <FaCheck className="h-5 w-5 text-neutral-400" />
           </button>
         ) : (
           <div>
             <button onClick={() => setIsEditing(true)}>
-              <MdOutlineModeEdit className="w-5 h-5 text-neutral-400" />
+              <MdOutlineModeEdit className="h-5 w-5 text-neutral-400" />
             </button>
             <button onClick={handleDelete}>
-              <MdDelete className="w-5 h-5 text-neutral-400" />
+              <MdDelete className="h-5 w-5 text-neutral-400" />
             </button>
           </div>
         )}

@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react'
-import SingleTask from './Task'
 import AddTask from './AddTask'
-import TodoNav from '../header/TodoNav'
 import { useLocalStorage } from '../../hooks/useLocalStorage'
 import Task from './Task'
 
@@ -56,9 +54,7 @@ export default function TodoList({ currentMode }) {
                 changeStatus={changeStatus}
               />
             ))
-          : currentMode === 'ALL' && (
-              <p className="text-neutral-500">할일을 추가해주세요 :D</p>
-            )}
+          : currentMode === 'ALL' && <p>할일을 추가해주세요 :D</p>}
       </ul>
     </div>
   )

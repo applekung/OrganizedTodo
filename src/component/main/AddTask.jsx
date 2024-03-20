@@ -22,11 +22,12 @@ export default function AddTask({ addTask }) {
         type="text"
         placeholder="새로운 할일 추가"
         onChange={handleInputChange}
-        className="rounded border border-purple-400 px-4 py-2 focus:ring focus:ring-purple-200"
+        // className="border border-purple-400 focus:ring focus:ring-purple-200 rounded px-4 py-2"
+        className="input border border-purple-400"
         value={text}
       />
       <button type="submit">
-        <CiCirclePlus className="h-8 w-8 font-bold text-purple-400" />
+        <CiCirclePlus className="colorIcon" />
       </button>
     </form>
   )
