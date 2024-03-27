@@ -30,14 +30,17 @@ export default function TodoList({ currentMode }) {
 
   // tasks와 currentMode가 바뀔때 taskToShow 상태 업데이트
   useEffect(() => {
-    // currentMode가 'ALL'일경우 모든 task 보여줌
-    let filteredTasks = tasks
-    if (currentMode === 'DONE' || currentMode === 'INPROGRESS') {
-      filteredTasks = tasks.filter((task) => task.status === currentMode)
-    }
-
+    const filteredTasks = getFilteredData()
     setTaskToShow(filteredTasks)
   }, [currentMode, tasks])
+
+  const getFilteredData = () => {
+    if (currentMode === 'ALL') {
+      return tasks
+    } else {
+      return tasks.filter((task) => task.status === currentMode)
+    }
+  }
 
   return (
     <div className="flex flex-col gap-4">
