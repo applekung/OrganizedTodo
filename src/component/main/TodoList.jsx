@@ -5,7 +5,6 @@ import Task from './Task'
 
 export default function TodoList({ currentMode }) {
   const [tasks, setTasks] = useLocalStorage([], 'tasks')
-  const [taskToShow, setTaskToShow] = useState([])
 
   /** AddTask(task추가하는 인풋)에서 newTask를 받아 tasks배열에 추가 */
   const handleAddTask = (newTask) => {
@@ -28,12 +27,6 @@ export default function TodoList({ currentMode }) {
     )
   }
 
-  // tasks와 currentMode가 바뀔때 taskToShow 상태 업데이트
-  useEffect(() => {
-    const filteredTasks = getFilteredData()
-    setTaskToShow(filteredTasks)
-  }, [currentMode, tasks])
-
   const getFilteredData = () => {
     if (currentMode === 'ALL') {
       return tasks
@@ -42,13 +35,15 @@ export default function TodoList({ currentMode }) {
     }
   }
 
+  let filteredTasks = getFilteredData()
+
   return (
     <div className="flex flex-col gap-4">
       <AddTask addTask={handleAddTask} />
       <ul>
         {/* taskToShow에서 map으로 Task 한줄씩 보여줌 */}
-        {taskToShow.length
-          ? taskToShow.map((task) => (
+        {filteredTasks.length
+          ? filteredTasks.map((task) => (
               <Task
                 key={task.id}
                 task={task}
