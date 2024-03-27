@@ -1,4 +1,8 @@
-export default function TodoNav({ currentMode, handleModeChange, modes }) {
+import { useContext } from 'react'
+import { TaskContext } from '../../App'
+
+export default function TodoNav() {
+  const { currentMode, handleModeChange, modes } = useContext(TaskContext)
   const changeMode = (mode) => () => {
     handleModeChange(mode)
   }
