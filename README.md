@@ -1,5 +1,12 @@
 2024/03/18~19 TIL
 
+### 추후 수정
+
+    (3/27) taskToShow를 일반 변수로 변경, getFilteredTask함수 분리
+    (3/27) context 사용
+    () 최적화 -> with_optimization 폴더
+    () context분리, context사용하면서 최적화 적용 가능하게 변경
+
 ### 고민한점 & 배운점:
 
 1. 컴포넌트는 여러번 리랜더링 되므로 불필요한 함수 호출 발생에 유의  
