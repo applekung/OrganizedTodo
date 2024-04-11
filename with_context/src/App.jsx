@@ -4,7 +4,8 @@ import TodoNav from './component/header/TodoNav'
 import { useLocalStorage } from './hooks/useLocalStorage'
 
 const modes = ['ALL', 'DONE', 'INPROGRESS']
-export const TaskContext = createContext()
+export const TaskStateContext = createContext()
+export const TaskControlContext = createContext()
 
 function App() {
   const [tasks, setTasks] = useLocalStorage([], 'tasks')

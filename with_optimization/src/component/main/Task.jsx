@@ -1,27 +1,26 @@
-import { memo, useContext, useState } from 'react'
+import { useState } from 'react'
 import { MdOutlineModeEdit, MdDelete } from 'react-icons/md'
 import { FaCheck } from 'react-icons/fa'
-import { TaskContext } from '../../App'
+import { memo } from 'react'
 
-const Task = ({ task }) => {
-  const { onDeleteTask, onEditTask, onChangeStatus } = useContext(TaskContext)
+const Task = ({ task, deleteTask, editTask, changeStatus }) => {
   const { id, text, status } = task
   const [isEditing, setIsEditing] = useState(false)
   const [editedValue, setEditedValue] = useState(text)
 
   const handleCheck = (e) => {
     const newStatus = e.target.checked ? 'DONE' : 'INPROGRESS'
-    onChangeStatus(id, newStatus)
+    changeStatus(id, newStatus)
   }
 
   const handleDelete = () => {
-    onDeleteTask(id)
+    deleteTask(id)
   }
 
   const handleEditChange = (e) => setEditedValue(e.target.value)
 
   const handleEdit = () => {
-    onEditTask({ ...task, text: editedValue })
+    editTask({ ...task, text: editedValue })
     setIsEditing(false)
   }
 

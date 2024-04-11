@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.checkBox {
+  @apply mr-1 accent-purple-400;
+}
+
+.input {
+  @apply w-96 rounded px-3 py-2 text-lg text-neutral-700 focus:ring focus:ring-purple-200;
+}
+
+.colorIcon {
+  @apply h-8 w-8 font-bold text-purple-400;
+}
